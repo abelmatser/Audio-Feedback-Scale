@@ -8,7 +8,7 @@ bool msOverlay1(SH1106 *display, SH1106UiState* state) {
 bool msOverlay2(SH1106 *display, SH1106UiState* state) {
   display->setTextAlignment(TEXT_ALIGN_LEFT);
   display->setFont(ArialMT_Plain_10);
-  display->drawStringMaxWidth(0, 10, 120 , getMood());
+  display->drawStringMaxWidth(0, 15, 120 , getMood());
   return true;
 }
 
