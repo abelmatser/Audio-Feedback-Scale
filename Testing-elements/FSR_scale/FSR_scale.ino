@@ -7,7 +7,8 @@
 
 #include "SensorFSR.h"
 
-int fsrPin = A7; // FSR is connected to analog 0
+//const int fsrPin = A7; // FSR is connected to analog 7 on Arduino Nano
+const int fsrPin = A0; // FSR is connected to analog A0 on NodeMCU
 bool DEBUG = true;
 
 // Create object sensorFSR
