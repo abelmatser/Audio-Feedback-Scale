@@ -1,16 +1,3 @@
-#include <Wire.h>
-#include <SPI.h>
-#include "SH1106.h"
-#include "SH1106Ui.h"
-#include "emojis.h"
-
-#define OLED_RESET  D1   // RESET
-#define OLED_DC     D2   // Data/Command
-#define OLED_CS     D8   // Chip select
-
-SH1106 display(true, OLED_RESET, OLED_DC, OLED_CS); // FOR SPI
-SH1106Ui ui     ( &display );
-
 bool msOverlay1(SH1106 *display, SH1106UiState* state) {
   display->setTextAlignment(TEXT_ALIGN_RIGHT);
   display->setFont(ArialMT_Plain_10);
@@ -91,12 +78,4 @@ void timeBudget() {
   if (remainingTimeBudget > 0) {
     delay(remainingTimeBudget);
   }
-}
-
-void setup() {
-  setupUI();
-}
-
-void loop() {
-  timeBudget();
 }
