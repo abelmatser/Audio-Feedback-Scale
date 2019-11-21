@@ -2,10 +2,9 @@
   SensorFSR.h - Class for reading FSR sensor.
   Created by Abel Matser, 21 November 2019
 */
+
 #ifndef SensorFSR_h
 #define SensorFSR_h
-
-#include "Arduino.h"
 
 class SensorFSR
 {
