@@ -24,8 +24,9 @@
 #include "SoftwareSerial.h"
 #include "DFRobotDFPlayerMini.h"
 
-//SoftwareSerial mySoftwareSerial(3, 1); // RX, TX
-SoftwareSerial mySoftwareSerial(16, 17); // RX, TX
+//SoftwareSerial mySoftwareSerial(3, 1); // RX, TX for NodeMCU upload impossible
+SoftwareSerial mySoftwareSerial(13, 15); // RX, TX for NodeMCU so upload is still possible
+//SoftwareSerial mySoftwareSerial(16, 17); // RX, TX for ESP32 Thing
 DFRobotDFPlayerMini myDFPlayer;
 void printDetail(uint8_t type, int value);
 
@@ -48,7 +49,7 @@ void setup()
   }
   Serial.println(F("DFPlayer Mini online."));
 
-  myDFPlayer.volume(10);  //Set volume value. From 0 to 30
+  myDFPlayer.volume(15);  //Set volume value. From 0 to 30
   myDFPlayer.play(1);  //Play the first mp3
 }
 
