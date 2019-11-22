@@ -79,9 +79,17 @@ void playEmotions() {
   else {
     Serial.println("No sensorFSR.outputMass known.");
   }
+  
+  if (sensorFSR.outputMass != -1) {
+    songDelay();
+  }
+}
+
+void songDelay()
+{
   Serial.println("Delaying to start song");
-//  Serial.println(myDFPlayer.readState()); //read mp3 state
-  delay(5000);
+  //  Serial.println(myDFPlayer.readState()); //read mp3 state
+  delay(3000);
 }
 
 void printDetail(uint8_t type, int value) {
