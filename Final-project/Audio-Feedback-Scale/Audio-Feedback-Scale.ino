@@ -38,7 +38,7 @@ SH1106Ui ui     ( &display );
 void setup() {
   Serial.begin(115200);
   // Setup AUDIO
-  DFplayerSetup();
+  //DFplayerSetup();
 
   // Setup GRAPHICS
   setupUI();
