@@ -17,7 +17,6 @@ void DFplayerSetup()
   Serial.println(F("DFPlayer Mini online."));
 
   myDFPlayer.volume(30);  //Set volume value. From 0 to 30
-  myDFPlayer.play(1);  //Play the first mp3
 }
 
 void DFplayerTest()
@@ -79,7 +78,7 @@ void playEmotions() {
   else {
     Serial.println("No sensorFSR.outputMass known.");
   }
-  
+
   if (sensorFSR.outputMass != -1) {
     songDelay();
   }

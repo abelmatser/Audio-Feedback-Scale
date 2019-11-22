@@ -15,7 +15,7 @@ void printDetail(uint8_t type, int value);
 
 //const int fsrPin = A7; // FSR is connected to analog 7 on Arduino Nano
 const int fsrPin = A0; // FSR is connected to analog A0 on NodeMCU
-bool DEBUG = true;
+bool DEBUG = false;
 
 SensorFSR sensorFSR(fsrPin, DEBUG); // Create object sensorFSR
 
@@ -48,8 +48,7 @@ void setup() {
 ///////////// LOOP ///////////////////
 void loop() {
   // AUDIO loop
-  // DFplayerTest();
-//  playEmotions();
+  playEmotions();
 
   // FSR loop
   sensorFSR.readValue();

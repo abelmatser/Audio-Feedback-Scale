@@ -26,8 +26,8 @@ class SensorFSR
     // Linear approximation of FSR
     //    const float _convertToMass_a = 3.14;
     //    const float _convertToMass_b = -103.5;
-    const float _convertToMass_a = 3.46;
-    const float _convertToMass_b = -129.55;
+    const float _convertToMass_a = 3.8;
+    const float _convertToMass_b = -99.4;
 
 };
 
