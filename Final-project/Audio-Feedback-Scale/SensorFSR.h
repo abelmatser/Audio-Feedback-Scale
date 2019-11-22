@@ -13,20 +13,22 @@ class SensorFSR
     void readValue();
     void convertToMass();
     void converToReality();
-    
+
     // Output value
     int outputMass;
-    
+
   private:
     int _pin;
     bool _DEBUG;
     float _fsrMass;
     int _fsrReading;
-    
+
     // Linear approximation of FSR
-    const float _convertToMass_a = 3.14;
-    const float _convertToMass_b = -103.5;
-    
+    //    const float _convertToMass_a = 3.14;
+    //    const float _convertToMass_b = -103.5;
+    const float _convertToMass_a = 3.46;
+    const float _convertToMass_b = -129.55;
+
 };
 
 SensorFSR::SensorFSR(int pin, bool DEBUG)
@@ -95,10 +97,10 @@ void SensorFSR::converToReality()
     outputMass = 800;
   }
 
-//  if (_DEBUG)
-//  {
-    Serial.print("Output mass reading = ");
-    Serial.println(outputMass);
-//  }
+  //  if (_DEBUG)
+  //  {
+  Serial.print("Output mass reading = ");
+  Serial.println(outputMass);
+  //  }
 }
 #endif
