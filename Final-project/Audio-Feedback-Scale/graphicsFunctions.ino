@@ -68,8 +68,8 @@ bool drawFrame(SH1106 *display, SH1106UiState* state, int x, int y) {
 }
 int frameCount = 0;
 bool (*frames[])(SH1106 *display, SH1106UiState* state, int x, int y) = {drawFrame};
-bool (*overlays[])(SH1106 *display, SH1106UiState* state)             = { msOverlay1, msOverlay2};
-int overlaysCount = 2;
+bool (*overlays[])(SH1106 *display, SH1106UiState* state)             = { msOverlay1, msOverlay2, msOverlay3};
+int overlaysCount = 3;
 
 void setupUI() {
   ui.setTargetFPS(60);
