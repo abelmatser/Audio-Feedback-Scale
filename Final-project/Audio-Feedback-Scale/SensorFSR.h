@@ -95,10 +95,10 @@ void SensorFSR::converToReality()
     outputMass = 800;
   }
 
-  if (_DEBUG)
-  {
+//  if (_DEBUG)
+//  {
     Serial.print("Output mass reading = ");
     Serial.println(outputMass);
-  }
+//  }
 }
 #endif

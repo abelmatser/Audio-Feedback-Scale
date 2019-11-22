@@ -31,26 +31,29 @@ String getMood(){
 }
 
 bool msOverlay3(SH1106 *display, SH1106UiState* state) {
-  if (millis() < 3000) {
+  if (sensorFSR.outputMass == 100) {
     display->drawXbm(50, 30, Emoji1_width, Emoji1_height, Emoji1_bits);
   }
-  else if (millis() < 6000) {
+  else if (sensorFSR.outputMass == 200) {
     display->drawXbm(50, 30, Emoji2_width, Emoji2_height, Emoji2_bits);
   }
-  else if (millis() < 9000) {
+  else if (sensorFSR.outputMass == 300) {
     display->drawXbm(50, 30, Emoji3_width, Emoji3_height, Emoji3_bits);
   }
-  else if (millis() < 12000) {
+  else if (sensorFSR.outputMass == 400) {
     display->drawXbm(50, 30, Emoji4_width, Emoji4_height, Emoji4_bits);
   }
-  else if (millis() < 15000) {
+  else if (sensorFSR.outputMass == 500) {
     display->drawXbm(50, 30, Emoji5_width, Emoji5_height, Emoji5_bits);
   }
-  else if (millis() < 17000) {
+  else if (sensorFSR.outputMass == 600) {
     display->drawXbm(50, 30, Emoji6_width, Emoji6_height, Emoji6_bits);
   }
-  else{
+  else if (sensorFSR.outputMass > 600) {
     display->drawXbm(50, 30, Emoji7_width, Emoji7_height, Emoji7_bits);
+  }
+  else{
+    // Display nothing
   }
   return true;
 }

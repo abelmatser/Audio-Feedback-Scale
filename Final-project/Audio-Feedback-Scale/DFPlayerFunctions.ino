@@ -16,7 +16,7 @@ void DFplayerSetup()
   }
   Serial.println(F("DFPlayer Mini online."));
 
-  myDFPlayer.volume(15);  //Set volume value. From 0 to 30
+  myDFPlayer.volume(30);  //Set volume value. From 0 to 30
   myDFPlayer.play(1);  //Play the first mp3
 }
 
@@ -26,7 +26,7 @@ void DFplayerTest()
 
   if (millis() - timer > 3000) {
     timer = millis();
-    
+
     myDFPlayer.next();  //Play next mp3 every 3 second.
 
     int value;
@@ -49,6 +49,39 @@ void DFplayerTest()
   if (myDFPlayer.available()) {
     printDetail(myDFPlayer.readType(), myDFPlayer.read()); //Print the detail message from DFPlayer to handle different errors and states.
   }
+}
+
+void playEmotions() {
+  if (sensorFSR.outputMass == -1) {
+    myDFPlayer.pause();
+  }
+  else if (sensorFSR.outputMass == 100) {
+    myDFPlayer.play(1);
+  }
+  else if (sensorFSR.outputMass == 200) {
+    myDFPlayer.play(2);
+  }
+  else if (sensorFSR.outputMass == 300) {
+    myDFPlayer.play(3);
+  }
+  else if (sensorFSR.outputMass == 400) {
+    myDFPlayer.play(4);
+  }
+  else if (sensorFSR.outputMass == 500) {
+    myDFPlayer.play(5);
+  }
+  else if (sensorFSR.outputMass == 600) {
+    myDFPlayer.play(6);
+  }
+  else if (sensorFSR.outputMass >  600) {
+    myDFPlayer.play(7);
+  }
+  else {
+    Serial.println("No sensorFSR.outputMass known.");
+  }
+  Serial.println("Delaying to start song");
+//  Serial.println(myDFPlayer.readState()); //read mp3 state
+  delay(5000);
 }
 
 void printDetail(uint8_t type, int value) {
